@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic_Light</title>   
+    <style>  
+    body{ 
+        font-family: sans-serif;
+    } 
+    #controlpanel{ 
+        float: left; 
+        padding-top: 30px;
+    } 
+    .button{ 
+        background-color: gray; 
+        color: white; 
+        border-radius: 10px; 
+        padding: 20px; 
+        text-align: center; 
+        margin: 30px 10px;  
+        cursor: pointer; 
+    } 
+    #traffic-light{ 
+        height: 350px;   
+        width: 150px; 
+        float: left; 
+        background-color: #333; 
+        border-radius: 40px; 
+        margin: 30px 0; 
+        padding: 20px; 
+    } 
+    .bulb{ 
+        height: 80px; 
+        width: 80px; 
+        background-color: #111; 
+        border-radius: 50%; 
+        margin: 20px auto; 
+        transition: background 500ms;  
+    }
+    </style>
+</head>  
+<body> 
+    <div id="controlpanel"> 
+        <h1 id="stopButton" class="button">stop</h1> 
+        <h1 id="waitButton" class="button">wait</h1>
+        <h1 id="goButton" class="button">go</h1>   
+    </div>   
+    <div id="traffic-light"> 
+        <div id="stopLight"class="bulb"></div> 
+        <div id="waitLight" class="bulb"></div>
+        <div id="goLight" class="bulb"></div>    
+    </div>
+</body> 
+<script> 
+document.getElementById('stopButton').onclick=iluminateRed;  
+document.getElementById('waitButton').onclick=iluminateYellow; 
+document.getElementById('goButton').onclick=iluminateGreen;    
+
+
+function iluminateRed(){ 
+    clearLights(); 
+    document.getElementById('stopLight').style.backgroundColor="red"; 
+} 
+function iluminateYellow(){ 
+    clearLights(); 
+    document.getElementById('waitLight').style.backgroundColor="yellow"; 
+} 
+function iluminateGreen(){ 
+    clearLights(); 
+    document.getElementById('goLight').style.backgroundColor="green"; 
+}   
+
+function clearLights(){  
+    document.getElementById('stopLight').style.backgroundColor="black";  
+    document.getElementById('waitLight').style.backgroundColor="black";  
+    document.getElementById('goLight').style.backgroundColor="black";  
+}  
+</script>
+</html>
