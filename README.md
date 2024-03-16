@@ -1,1 +1,1 @@
-# Traffic_Light_Sign
+The project describes the basic functioning of  traffic signal lights using html,css and javascript
